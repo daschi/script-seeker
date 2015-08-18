@@ -1,0 +1,9 @@
+<div class="jumbotron language" id="<%= @language.id %>">
+  <div class="ui grid letters-button">
+      <% @letters.each do |letter| %>
+        <div id="<%=letter.id%>" class="btn btn-success letter-container">
+          <span class="letter"><%= letter.isolated %></span>
+        </div>
+      <% end %>
+  </div>
+</div>

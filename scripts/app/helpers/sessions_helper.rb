@@ -6,8 +6,6 @@ module SessionsHelper
 
   def logged_in?
     p "I'm in logged in"
-    p session[:id]
-    p "*" * 100
     !session[:id].nil?
   end
 end

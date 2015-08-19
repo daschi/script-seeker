@@ -1,4 +1,9 @@
-<%= button_to "Login", new_session_path, method: "get" %>
+<% if logged_in? %>
+  <%= button_to "Logout", logout_path, { action: "logout", method: :delete } %>
+<% else %>
+  <%= button_to "Login", login_path, { action: "login", method: :get } %>
+  <%= button_to "Sign up", new_user_path, { action: "new", method: :get } %>
+<% end %>
 
 <blockquote class="pull-right">
   <p>To have another language is to possess a second soul.</p>

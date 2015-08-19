@@ -1,13 +1,13 @@
 <div id="cd-login" class="user-form">
 
-    <%= form_for @session do |f| %>
+    <%= form_for @user, url: create_session_path do |f| %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
 
       <%= f.label :password %>
-      <%= f.text_field :password_digest %>
-      <%= f.submit %>
+      <%= f.password_field :password_digest %>
+      <%= f.submit "Login" %>
 
       <% end %>
 

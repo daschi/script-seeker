@@ -17,10 +17,14 @@ Rails.application.routes.draw do
     resources :letters, :words
   end
 
-  resources :sessions
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create', as: 'create_session'
+  delete '/logout' => 'sessions#destroy', as: 'logout'
 
-  get "users/new" => 'users#new'
-  post "users/create" => 'users#create'
+
+  resources :users, only: [:create, :new]
+  # get "users/new" => 'users#new'
+  # post "users/create" => 'users#create'
 
   # Example resource route with options:
   #   resources :products do

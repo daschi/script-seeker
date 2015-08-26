@@ -5,7 +5,12 @@ module SessionsHelper
   end
 
   def logged_in?
-    p "I'm in logged in"
     !session[:id].nil?
   end
+
+  def current_user?
+    @user = User.find(params[:id])
+    @user == current_user
+  end
+
 end

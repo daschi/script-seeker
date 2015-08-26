@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150818174155) do
   enable_extension "plpgsql"
 
   create_table "languages", force: true do |t|
-    t.string   "language"
+    t.string   "name"
     t.string   "script_type"
     t.string   "text_direction"
     t.string   "region_code"
